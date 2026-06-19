@@ -1,0 +1,25 @@
+[project]
+name = "emiyamind"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.4.6",
+    "pandas>=3.0.3",
+    "torch>=2.11.0",
+    "torchvision>=0.26.0",
+    "transformers>=5.12.1",
+]
+
+[tool.uv.sources]
+torch = [
+  { index = "pytorch-cu130", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
+torchvision = [
+  { index = "pytorch-cu130", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
